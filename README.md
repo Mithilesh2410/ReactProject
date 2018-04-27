@@ -6,9 +6,12 @@ Test for Add, Edit, Delete the Contacts.
 - Add New Contact Detail.
 - Edit Contact Detail.
 
+## Install node_module
+- `npm` to get your dependencies.
+
+run npm command :
+## npm install
 
 ## Getting Started
-- `npm` to get your dependencies.
-- `npm start` to fire up your webpack environment for viewing in your browser of choice.
 
 -npm start
