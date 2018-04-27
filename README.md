@@ -6,7 +6,7 @@ Test for Add, Edit, Delete the Contacts.
 - Add New Contact Detail.
 - Edit Contact Detail.
 
-## Install node_module
+## Install the node_module
 - `npm` to get your dependencies.
 
 run npm command :
@@ -14,4 +14,4 @@ run npm command :
 
 ## Getting Started
 
--npm start
+## npm start or npm start -s
