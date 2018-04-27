@@ -8,8 +8,7 @@ Test for Add, Edit, Delete the Contacts.
 
 ## Install the node_module
 - `npm` to get your dependencies.
-
-run npm command : -npm install
+- run npm command : npm install
 
 ## Getting Started
-run npm command : -npm start or npm start -s
+- run npm command : npm start or npm start -s
