@@ -3,16 +3,16 @@ import delay from './delay';
 const authors = [
   {
     id: 'Active',
-    firstName: 'Active'
+    status: 'Active'
   },
   {
     id: 'Inactive',
-    firstName: 'Inactive'
+    status: 'Inactive'
   }
 ];
 
 const generateId = (author) => {
-  return author.firstName.toLowerCase();
+  return author.status.toLowerCase();
 };
 
 class AuthorApi {

@@ -1,23 +1,27 @@
 import React from 'react';
 import TextInput from '../common/TextInput';
 import SelectInput from '../common/SelectInput';
+import toastr from 'toastr';
 
 const CourseForm = ({course, allAuthors, onSave, onChange, saving, errors}) => {
   return (
     <form>
-      <h1>Manage Course</h1>
-      <TextInput name="watchHref" label="First Name" value={course.watchHref} onChange={onChange} error={errors.title}/>
-      <TextInput name="title" label="Last Name" value={course.title} onChange={onChange} error={errors.title}/>
-      <TextInput name="authorId" label="Email" value={course.authorId} onChange={onChange} />
+      <h1>Add New Contact</h1>
+      <TextInput name="firstName" label="First Name" value={course.firstName} onChange={onChange} error={errors.firstName}/>
+      <TextInput name="lastName" label="Last Name" value={course.lastName} onChange={onChange} error={errors.lastName}/>
+      <TextInput name="email" label="Email" value={course.email} onChange={onChange} error={errors.email} />
 
-      <SelectInput name="category" label="Status" value={course.category} defaultOption="Status" options={allAuthors}
-      onChange={onChange} error={errors.category}/>
-      <TextInput  name="length" label="Length" value={course.length} onChange={onChange} error={errors.length}/>
+      <SelectInput name="status" label="Status" value={course.status} defaultOption="Status" options={allAuthors}
+      onChange={onChange} error={errors.status}/>
+      <TextInput name="phoneNumber" label="Phone Number" value={course.phoneNumber} onChange={onChange} error={errors.phoneNumber}/>
 
       <input type="submit" disabled={saving} value={saving ? 'Saving...' : 'Save'} className="btn btn-primary" onClick={onSave}/>
     </form>
   );
 };
+
+
+
 
 CourseForm.propTypes = {
   course: React.PropTypes.object.isRequired,

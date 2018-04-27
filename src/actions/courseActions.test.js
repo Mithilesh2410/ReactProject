@@ -9,7 +9,7 @@ import configureMockStore from 'redux-mock-store';
 describe('Course Actions', () => {
   describe('createCourseSuccess', () => {
     it('should create a CREATE_COURSE_SUCCESS action', () => {
-      const course = {id: 'clean-code', title: 'Clean Code'};
+      const course = {id: 'clean-code', firstName: 'Clean Code'};
       const expectedAction = {
         type: types.CREATE_COURSE_SUCCESS,
         course: course
@@ -33,7 +33,7 @@ describe('Async Actions', () => {
   it('should create BEGIN_AJAX_CALL and LOAD_COURSES_SUCCESS when loading courses', (done) => {
     const expectedActions = [
       {type: types.BEGIN_AJAX_CALL},
-      {type: types.LOAD_COURSES_SUCCESS, body: {courses: [{id: 'clean-code', title: 'Clean Code'}]}}
+      {type: types.LOAD_COURSES_SUCCESS, body: {courses: [{id: 'clean-code', firstName: 'Clean Code'}]}}
     ];
 
     const store = mockStore({courses: []}, expectedActions, done);

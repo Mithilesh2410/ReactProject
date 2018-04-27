@@ -5,13 +5,13 @@ describe('Author Selectors', () => {
   describe('authorsFormattedForDropdown', () => {
     it('should return author data formatted for use in a dropdown', () => {
       const authors = [
-        {id: 'cory-house', firstName: 'Cory', lastName: 'House'},
-        {id: 'scott-allen',firstName: 'Scott',lastName: 'Allen'}
+        {id: '1', status: 'Active'},
+        {id: '2',status: 'Inactive'}
       ];
 
       const expected = [
-        {value: 'cory-house', text: 'Cory House'},
-        {value: 'scott-allen', text: 'Scott Allen'}
+        {value: 'Active', text: 'Active'},
+        {value: 'Inactive', text: 'Inactive'}
       ];
 
       expect(authorsFormattedForDropdown(authors)).toEqual(expected);

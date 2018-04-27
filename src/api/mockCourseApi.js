@@ -3,35 +3,35 @@ import delay from './delay';
 const courses = [
   {
     id: "1",
-    title: "Mithilesh",
-    watchHref: "Satpute",
-    authorId: "mithil@gmail.com",
-    length: "988776654",
-    category: "Active"
+    lastName: "Mithilesh",
+    firstName: "Satpute",
+    email: "mithil@gmail.com",
+    phoneNumber: "988776654",
+    status: "Active"
   },
   {
     id: "2",
-    title: "SYZ",
-    watchHref: "SYZ",
-    authorId: "mithil@gmail.com",
-    length: "988776654",
-    category: "Active"
+    lastName: "SYZ",
+    firstName: "SYZ",
+    email: "mithil@gmail.com",
+    phoneNumber: "988776654",
+    status: "Active"
   },
   {
     id: "3",
-    title: "ABC",
-    watchHref: "ABC",
-    authorId: "mithil@gmail.com",
-    length: "988776654",
-    category: "Active"
+    lastName: "ABC",
+    firstName: "ABC",
+    email: "mithil@gmail.com",
+    phoneNumber: "988776654",
+    status: "Active"
   },
   {
     id: "4",
-    title: "Prafull",
-    watchHref: "Prafull",
-    authorId: "mithil@gmail.com",
-    length: "988776654",
-    category: "Active"
+    lastName: "Prafull",
+    firstName: "Prafull",
+    email: "mithil@gmail.com",
+    phoneNumber: "988776654",
+    status: "Active"
   }
 
 ];
@@ -41,7 +41,7 @@ function replaceAll(str, find, replace) {
 }
 
 const generateId = (course) => {
-  return replaceAll(course.title, ' ', '-');
+  return replaceAll(course.firstName, ' ', '-');
 };
 
 class CourseApi {
@@ -57,10 +57,9 @@ class CourseApi {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const minCourseTitleLength = 1;
-        if (course.title.length < minCourseTitleLength) {
-          reject(`Title must be at least ${minCourseTitleLength} characters.`);
+        if (course.lastName.length < minCourseTitleLength) {
+          reject(`Name must be at least ${minCourseTitleLength} characters.`);
         }
-
         if (course.id) {
           const existingCourseIndex = courses.findIndex(a => a.id == course.id);
           courses.splice(existingCourseIndex, 1, course);
@@ -68,7 +67,6 @@ class CourseApi {
           course.id = generateId(course);
           courses.push(course);
         }
-
         resolve(Object.assign({}, course));
       }, delay);
     });

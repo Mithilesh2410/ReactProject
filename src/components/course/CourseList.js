@@ -11,6 +11,8 @@ const CourseList = ({courses}) => {
         <th>Email</th>
         <th>Status</th>
         <th>Phone Number</th>
+
+
       </tr>
       </thead>
       <tbody>

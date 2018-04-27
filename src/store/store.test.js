@@ -9,7 +9,7 @@ describe('Store', function() {
     // arrange
     const store = createStore(rootReducer, initialState);
     const course = {
-      title: "Clean Code"
+      firstName: "Clean Code"
     };
     // act
     const action = courseActions.createCourseSuccess(course);
@@ -17,7 +17,7 @@ describe('Store', function() {
     // assert
     const actual = store.getState().courses[0];
     const expected = {
-      title: "Clean Code"
+      firstName: "Clean Code"
     };
 
     expect(actual).toEqual(expected);

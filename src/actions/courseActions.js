@@ -37,3 +37,16 @@ export function saveCourse(course) {
     });
   };
 }
+
+export function deleteCourse(courseId) {
+  return function (dispatch, getState) {
+    dispatch(beginAjaxCall());
+    return courseApi.deleteCourse(courseId).then(course => {
+      course.id ? dispatch(updateCourseSuccess(course)) :
+        dispatch(createCourseSuccess(course));
+    }).catch(error => {
+      dispatch(ajaxCallError(error));
+      throw(error);
+    });
+  };
+}
